@@ -1,0 +1,16 @@
+version: '2.1'
+services:
+  php-base:
+    build:
+      context: .
+    image: mindhochschulnetzwerkde/php-base
+    ports:
+      - "8000:8080"
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.php-base.rule=Host(`php-base.docker.localhost`)
+    networks:
+      - traefik
+networks:
+  traefik:
+    name: traefik
