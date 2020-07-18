@@ -3,7 +3,7 @@ services:
   php-base:
     build:
       context: .
-    image: mindhochschulnetzwerkde/php-base
+    image: mindhochschulnetzwerk/php-base
     ports:
       - "8000:8080"
     labels:
