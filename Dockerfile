@@ -39,7 +39,6 @@ RUN set -ex \
   && mkdir /var/www/html \
   && adduser -u 82 -D -S -H -G www-data www-data \
   && rm /etc/crontabs/root \
-  && echo "<?php phpinfo(); " > /var/www/html/index.php \
   && chown -R www-data:www-data /var/www/html /run /var/lib/nginx /var/log/nginx
 
 COPY config/nginx.conf /etc/nginx/nginx.conf

@@ -1,4 +1,4 @@
-Dockerfile
-docker-compose.yml
+Dockerfile*
+docker-compose*.yml
 README.md
 LICENSE
