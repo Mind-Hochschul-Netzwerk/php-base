@@ -4,9 +4,10 @@ minimalistic PHP base image built on Alpine Linux
 
 ## build and run
 
-    $ docker-compose up --build -d
+    $ make image
+    $ make dev
 
-Go to [http://localhost:8000](http://localhost:8000) to see the PHP info page.
+Go to [https://php.docker.localhost](https://php.docker.localhost) to see the PHP info page.
 
 ## features
 
