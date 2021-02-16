@@ -1,4 +1,4 @@
-FROM alpine:3.12
+FROM alpine:3.13
 
 # inspired by https://hub.docker.com/r/trafex/alpine-nginx-php7/
 
