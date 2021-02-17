@@ -1,15 +1,13 @@
 version: '3.5'
 services:
   php-base:
-    build:
-      context: .
     image: mindhochschulnetzwerk/php-base
     restart: unless-stopped
     labels:
       - traefik.enable=true
       - traefik.docker.network=traefik
       - traefik.http.routers.php.entrypoints=websecure
-      - traefik.http.routers.php.rule=Host(`php.${DOMAINNAME}`)
+      - traefik.http.routers.php.rule=Host(`php.docker.localhost`)
       - traefik.http.routers.php.tls=true
       - traefik.http.routers.php.tls.certresolver=myresolver
       - traefik.http.routers.php.middlewares=secheader
