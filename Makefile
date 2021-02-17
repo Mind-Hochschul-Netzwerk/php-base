@@ -5,7 +5,7 @@ endif
 
 image:
 	@echo "Building docker image"
-	docker build --pull --no-cache -t mindhochschulnetzwerk/mitglieder:latest .
+	docker build --pull --no-cache -t mindhochschulnetzwerk/php-base:latest .
 
 dev: check-traefik
 	@echo "Starting DEV Server"
