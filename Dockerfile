@@ -32,6 +32,10 @@ RUN set -ex \
     php7 \
     php7-fpm \
     php7-opcache \
+    php7-phar \
+    php7-openssl \
+    php7-json \
+    php7-mbstring \
     nginx \
     supervisor \
     curl \
@@ -39,7 +43,11 @@ RUN set -ex \
   && mkdir /var/www/html \
   && adduser -u 82 -D -S -H -G www-data www-data \
   && rm /etc/crontabs/root \
-  && chown -R www-data:www-data /var/www/html /run /var/lib/nginx /var/log/nginx
+  && chown -R www-data:www-data /var/www/html /run /var/lib/nginx /var/log/nginx \
+  && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
+  && test "$(php -r 'copy("https://composer.github.io/installer.sig", "php://stdout");')" = "$(php -r "echo hash_file('sha384', 'composer-setup.php');")" \
+  && php composer-setup.php --quiet \
+  && rm composer-setup.php
 
 COPY config/nginx.conf /etc/nginx/nginx.conf
 COPY config/fpm-pool.conf /etc/php7/php-fpm.d/www.conf
