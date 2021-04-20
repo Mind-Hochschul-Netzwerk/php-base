@@ -57,4 +57,4 @@ COPY entrypoint.sh /entrypoint.sh
 
 CMD "/entrypoint.sh"
 
-HEALTHCHECK CMD curl --silent --fail http://127.0.0.1:8080/fpm-ping
+HEALTHCHECK --timeout=10s CMD curl --fail http://127.0.0.1:8080/fpm-ping || exit 1
