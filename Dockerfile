@@ -46,7 +46,7 @@ RUN set -ex \
   && chown -R www-data:www-data /var/www/html /run /var/lib/nginx /var/log/nginx \
   && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
   && test "$(php -r 'copy("https://composer.github.io/installer.sig", "php://stdout");')" = "$(php -r "echo hash_file('sha384', 'composer-setup.php');")" \
-  && php composer-setup.php --quiet \
+  && php composer-setup.php --quiet --filename composer --install-dir /bin \
   && rm composer-setup.php
 
 COPY config/nginx.conf /etc/nginx/nginx.conf
