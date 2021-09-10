@@ -39,7 +39,7 @@ RUN set -ex \
     nginx \
     supervisor \
     curl \
-  && rm /etc/nginx/conf.d/default.conf \
+  && mkdir /etc/nginx/conf.d \
   && mkdir /var/www/html \
   && adduser -u 82 -D -S -H -G www-data www-data \
   && rm /etc/crontabs/root \

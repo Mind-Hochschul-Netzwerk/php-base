@@ -14,3 +14,6 @@ rebuild:
 dev: check-traefik
 	@echo "Starting DEV Server"
 	docker-compose up -d --force-recreate
+
+docker-push:
+	docker push mindhochschulnetzwerk/php-base:latest
