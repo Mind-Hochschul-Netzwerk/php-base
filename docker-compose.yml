@@ -8,9 +8,6 @@ services:
       - traefik.docker.network=traefik
       - traefik.http.routers.php.entrypoints=websecure
       - traefik.http.routers.php.rule=Host(`php.docker.localhost`)
-      - traefik.http.routers.php.tls=true
-      - traefik.http.routers.php.tls.certresolver=myresolver
-      - traefik.http.routers.php.middlewares=secheader
     volumes:
       - "./index.php:/var/www/html/index.php:ro"
     networks:

@@ -7,7 +7,7 @@ image:
 	@echo "Building docker image"
 	docker build --pull --no-cache -t mindhochschulnetzwerk/php-base:latest .
 
-quick-image:
+rebuild:
 	@echo "Rebuilding docker image"
 	docker build -t mindhochschulnetzwerk/php-base:latest .
 
