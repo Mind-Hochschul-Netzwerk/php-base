@@ -2,6 +2,7 @@ version: '3.5'
 services:
   php-base:
     image: mindhochschulnetzwerk/php-base
+    container_name: php-base
     restart: unless-stopped
     labels:
       - traefik.enable=true

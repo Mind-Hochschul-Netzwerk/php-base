@@ -17,3 +17,9 @@ dev: check-traefik
 
 docker-push:
 	docker push mindhochschulnetzwerk/php-base:latest
+
+shell:
+	docker-compose exec php-base sh
+
+logs:
+	docker-compose logs -f
